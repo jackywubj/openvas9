@@ -11,7 +11,7 @@ RUN openvas-setup > /opt/openvas-setup.log
 RUN apt-get install -y redis && \
     sed -i -e 's/port 0/port 6379/' /etc/redis/redis.conf && \
     openvasmd --user=admin --new-password=admin1234
-ADD start_openvas.sh /start_openvas.sh
+ADD start_openvas.sh ./start_openvas.sh
 EXPOSE 9392 9390 80
 WORKDIR  /root
 ENV LANG=en_US.UTF-8
